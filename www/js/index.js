@@ -162,6 +162,26 @@ var app = function() {
 
     };
 
+    self.isRed = function(num) {
+        var redArr = [1,3,6,8,9,11,14];
+        for (var i = 0; i < redArr.length; ++i) {
+            if (redArr[i] === num) {
+                return true;
+            }
+        }
+        return false;
+    };
+
+    self.isWht = function(num) {
+        var whtArr = [2,4,5,7,10,12,13,15];
+        for (var i = 0; i < whtArr.length; ++i) {
+            if (whtArr[i] === num) {
+                return true;
+            }
+        }
+        return false;
+    };
+
     self.vue = new Vue({
         el: "#vue-div",
         delimiters: ['${', '}'],
@@ -173,7 +193,8 @@ var app = function() {
             reset: self.reset,
             shuffle: self.shuffle,
             scramble: self.scramble,
-            count_inversions: self.count_inversions
+            isRed: self.isRed,
+            isWht: self.isWht
         }
 
     });
